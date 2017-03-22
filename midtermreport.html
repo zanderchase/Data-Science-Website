@@ -1,27 +1,31 @@
 <html lang="en-us">
   <head>
     <meta charset="UTF-8">
-    <title>Blog Post 1</title>
+    <title>Midterm Report</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="style.css" media="screen">
   <body>
     <section class="page-header">
       <h1 class="project-name">What Does The Fox Say?</h1>
-      <h2 class="project-tagline">Blog Post 1</h2>
+      <h2 class="project-tagline">Midterm Report</h2>
     </section>
 
     <section class="main-content">
       <a href="index.html">Back</a>
       <br />
-      <h1>Blog Post 1: 3/8/17</h1>
-      <h3>Introduction: What Does The Fox Say?: An analysis of one-hit wonders:</h3>
+      <h1>Midterm Report: 3/22/17</h1>
+      <h2>Introduction and Investigation:</h2>
         <p>
-          In this project, we aim to investigate the various factors that lead to the creation, and popularity, of a one-hit wonder. A one-hit wonder is defined by Billboard (which is the music industry standard for measuring chart performance) as “an act that has won a position on [the] national, pop, Top 40 just once.”
+          The aim of our project is to investigate the factors that lead to the popularity of a given one-hit wonder. A one-hit wonder is defined as “an act that has won a position on [the] national, pop, Top 40 just once” by Billboard, which is the entity that is the music industry standard for measuring chart performance. 
         </p>
         <p>
-          So far, the majority of our efforts has been focussed on data collection and processing. In order to tackle the problem of identifying the various characteristics of music charts when a one-hit-wonder comes out, we decided to use two datasets: Billboard Hot 100 and LastFM data.
+          To investigate one-hit wonders, we scraped Billboard Hot 100 data from 2000 to the present day. We were able to scrape information such as song name, artist name, weekly song chart position, and song genre. We also combined out Billboard data with Spotify and LastFm data to help get the genre for the songs, since Billboard does not provide us with genre data. We stored our datafile which contained the name, artist, chart position and genre into a csv file. 
         </p>
-      <h3>Billboard Hot 100 Data:</h3>
+        <p>
+          There are various insights that we can glean from our data. First, we can look at the relative movement of chart position for a one-hit wonder and we can look at the number of weeks that a one-hit wonder stays in the Hot 100. Additionally, we can look at the popularity of various genres for a given year or time period. Finally, we can look at the total number of one-hit wonders per year. Thus, our dataset allows us to investigate a whole host of factors that could contribute to the popularity of a one-hit wonder. 
+        </p>
+      
+      <h2>Billboard Hot 100 Data:</h2>
         <p>
           We were able to successfully clean and process this dataset, which reaches all the way back to 1998. Each row of this data set contains information for: date of position, position in the Hot 100, song name, artist name, position in the preceding week, peak position in the Hot 100, number of weeks on the chart.
         </p>
@@ -44,4 +48,5 @@
 
 
   </body>
+  </head>
 </html>
