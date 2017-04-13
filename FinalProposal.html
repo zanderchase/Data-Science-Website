@@ -1,1 +1,38 @@
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Final Proposal</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style.css" media="screen">
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">What Does The Fox Say?</h1>
+      <h2 class="project-tagline">Final Proposal</h2>
+    </section>
+    <section class="main-content">
+      <a href="index.html">Back</a>
+      <br />
+      <h1>Final Proposal: 4/12/17</h1>
+      <h3>Data: </h3>
+        <p>
+          We have successfully cleaned and compiled our data. Much like what we intended to do in our pre-proposal, we were able to scrape data from the Billboard Top 100, Spotify, and lastfm data sets. We currently have 17 years of Top 100 data. For each position on the chart each week, we have data for: the date, song position, song name, artist name, last week position, peak position, weeks on chart, genre and whether it is a one-hit wonder. We have all of our data in a CSV file. 
+        </p>
+      <h3>Methodology: </h3>
+        <p>
+          The difficulties that we faced when cleaning the data were twofold: first we had to ensure that the artist names were correct for the songs, and second we had to assign a genre to the songs. In order to get correct artist names, we eliminated all featuring artists. For example, if the artist name was ‘Akon (ft. T-Pain)’, the resulting artist name would be ‘Akon”. In order to assign songs genres, we developed a list of most popular song genres such as ‘alternative’, or ‘electronic’. We then compared the genre tags that existed for each song of the lastfm data to our tags to determine which tags we should group the song under. This selective tagging of song genres was used so that we would have a compact list of 20 genres rather than 100+ variations of similar genres. Thus, after overcoming these challenges with the artist name and genre, we were able to compile and clean our data. 
+After cleaning the data, we moved on to analyzing it. The features that we are currently using for our analyses are: date, position, peak position, weeks on chart, genre, quarter of the year. One of the first aspects of the data that we analyzed was the staying power of one-hit wonders on the Top 100 charts. To do this, we wrote scripts to look at the total time on the charts. One interesting insight that we discovered while looking at the staying power data is that billboard automatically removes songs that are declining in position and have sunk below the top 50. Thus, we saw a spike in our data of songs lasting only 20 weeks. We also were able to write scripts that looked into the peak position, chart movement and genre categories of one-hit wonders. We were able to create various visualizations using matplotlib and excel to display this information.
+In addition to looking at various trends, we applied some machine learning algorithms to our data in order to attempt to predict one-hit wonders from our song data. As of now, we are using a decision tree classifier and have had a reasonable degree of success in predicting the one-hit wonders. With this current classification scheme, we have been able to predict roughly 25% of the one-hit wonders. Additionally, out of all songs that are predicted to be a one-hit wonder, roughly 60% of the songs are indeed one-hit wonders. 
+        </p>
+      <h3>Future Work: </h3>
+        <p>
+          We have several more goals for our final project. Our next course of action is to do some statistical analysis on our data set. We have several ideas in mind such as analyzing the percentage of one hit wonders that occur in each month or quarter year and the percent of one-hit wonders that correspond to each genre. We are also planning on using conditional probability to compare the relationship between one-hit wonder and other top songs. By using statistics we hope to gain further insight into our data.
+Another one of our ambitions is to compile a feature set that is comprehensive enough that we can predict, to a reasonable degree, whether a song is a one-hit wonder. To do this requires a significant amount of work, as we must refine our machine learning model and add to the feature set. Adding to the feature set could be accomplished by scraping additional song data from sites such as Youtube to make our data set more robust. Exploring YouTube viewership for one-hit wonders would be an interesting approach that could add a lot of distinguishable features to our data. By looking into view-counts while the song is in the top 100, we can glean more information about a one-hit wonder. An additional approach to improving our machine learning would be to feature engineer some more effective features for our classifier. This is an open ended area that we look forward to experimenting with to craft an effective predictor. 
+	The last main area that we aim to focus on is creating some more visualizations that graphically display our findings in a clear way. Some visualizations that we aim to create are a plot graphing the trajectories of all one-hit wonders over time and a graph comparing popularity of one-hit wonders and their genres vs not one-hit wonders. We plan to use matplotlib and D3 to create these visualizations. The main goal of them will be a clean and concise way to present the large amounts of data we have. 
+        </p>
+      <a href="index.html">Return to Home Page</a>
+    </section>
 
+
+  </body>
+  </head>
+</html>
