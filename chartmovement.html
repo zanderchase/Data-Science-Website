@@ -58,13 +58,11 @@
         <script type="text/javascript" src="chartmovement.js"></script>
         <h3> Writeup: </h3>
         <p>
-          This is a visualization of Marleys trains. The x-axis contains the hour of the day and the y-axis contains the various train stops. Each line represents the path of one train throughout the course of the day.
-          The first thing I did in setting up this visualization was to set up my axis. I set the x-axis with the appropriate range of time values and left the y-axis blank initialy.
-          When I oppened up the distance data I was able to get the train stops and their corresponding distance from Paris. Using these distance values and location names I was able to created a weighted y-axis that was spaced acording to distance by passing in the values I obtained.
-          Once I had the two axis set up I openned the schedule data. With the schedule data I was able to create a dictionary that held the y-value of a stop and the corresponding x-value of the time the stop occured at. I took into account both the arrival and departure times of the train to create and accurate schedule.
-          One I had all the stop data I used d3.line() to create the train lines. I ran into some initial problems with this in getting the lines to appear properly, but once I figured out how the function to draw lines worked I was able to pass in the appropriate values.
-          With the train lines drawn I focused on mouse movement. If I hovered over a train line that line would be highlighted in red. I also created a vertical line that moves with the mouse to show train times.
-
+          This is a visualization of one-hit wonders by year. You can select any given year by clicking on the year bar at the bottom. 
+            The graph shows the path that songs took on the top charts. By hovering over the lines you can see what one-hit wonder the 
+            song was and its rise and fall in the Billboard top 100. The different colors of each lines represent the genre of the song.
+            To make this visualization easier to visually understand we only included the top 5 genres
+            of one-hit wonders.
         </p>
     </body>
 </html>
