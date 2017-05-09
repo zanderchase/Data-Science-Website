@@ -1,0 +1,70 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <script type="text/javascript" src="https://d3js.org/d3.v4.min.js"></script>
+        <title>CS1951A: One Hit Wonders Over Time</title>
+        <h2>One Hit Wonders Over Time</h2>
+        <style type="text/css">
+        /* Style goes here! */
+        #chart {
+            margin-left: 40px;
+            height: 706px;
+        }
+
+        .axis path, .axis line {
+            fill: none;
+            stroke: black;
+            shape-rendering: crispEdges;
+        }
+        .text {
+            shape-rendering: crispEdges;
+            font-style: times;
+            font-weight: 100;
+        }
+        .trainstop line {
+            stroke: black;
+            shape-rendering: crispEdges;
+        }
+        .trainline {
+          fill: none;
+          stroke-width: 2px;
+        }
+        .overlay {
+            fill: none;
+            pointer-events: all;
+            cursor: ew-resize;
+        }
+        .gridline {
+          fill: none;
+          stroke: grey;
+          stroke-width: 0.5px;
+
+        }
+        .legend rect {
+          fill:white;
+          stroke:black;
+          opacity:0.8;
+        }
+        .vertline{
+          fill: none;
+          stroke: black;
+          stroke-width: 2px;
+          shape-rendering: crispEdges;
+        }
+        </style>
+    </head>
+    <body>
+        <p id="chart"></p>
+        <script type="text/javascript" src="chartmovement.js"></script>
+        <h3> Writeup: </h3>
+        <p>
+          This is a visualization of Marleys trains. The x-axis contains the hour of the day and the y-axis contains the various train stops. Each line represents the path of one train throughout the course of the day.
+          The first thing I did in setting up this visualization was to set up my axis. I set the x-axis with the appropriate range of time values and left the y-axis blank initialy.
+          When I oppened up the distance data I was able to get the train stops and their corresponding distance from Paris. Using these distance values and location names I was able to created a weighted y-axis that was spaced acording to distance by passing in the values I obtained.
+          Once I had the two axis set up I openned the schedule data. With the schedule data I was able to create a dictionary that held the y-value of a stop and the corresponding x-value of the time the stop occured at. I took into account both the arrival and departure times of the train to create and accurate schedule.
+          One I had all the stop data I used d3.line() to create the train lines. I ran into some initial problems with this in getting the lines to appear properly, but once I figured out how the function to draw lines worked I was able to pass in the appropriate values.
+          With the train lines drawn I focused on mouse movement. If I hovered over a train line that line would be highlighted in red. I also created a vertical line that moves with the mouse to show train times.
+
+        </p>
+    </body>
+</html>
