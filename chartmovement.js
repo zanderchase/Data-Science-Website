@@ -166,6 +166,13 @@ svg.append("text")
     .text("Month Of Year");
 
 
+svg.append("text")
+    .attr("class", "x label")
+    .attr("text-anchor", "end")
+    .attr("x", width/2)
+    .attr("y", height +100)
+    .text("Select Year");
+
 
 
   drawlines(2000)
