@@ -169,7 +169,7 @@ svg.append("text")
 svg.append("text")
     .attr("class", "x label")
     .attr("text-anchor", "end")
-    .attr("x", 0)
+    .attr("x", 50)
     .attr("y", 530)
     .text("Select Year:");
 
