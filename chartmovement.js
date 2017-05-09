@@ -1,6 +1,6 @@
     var margin = {top: 19.5, right: 19.5, bottom: 29.5, left: 59.5};
     var width = 1060 - margin.right;
-    var height = 550 - margin.top - margin.bottom;
+    var height = 650 - margin.top - margin.bottom;
     var padding = 30;
 
     // define the y scale  (vertical)
@@ -170,7 +170,7 @@ svg.append("text")
     .attr("class", "x label")
     .attr("text-anchor", "end")
     .attr("x", width/2)
-    .attr("y", height +100)
+    .attr("y", height +50)
     .text("Select Year");
 
 
@@ -331,170 +331,3 @@ svg.append("text")
 
 
 
-
-/*var timeP = d3.timeParse("%Hh%M")
-var myformat = d3.timeFormat("%Hh%M");
-var margin = {top: 19.5, right: 19.5, bottom: 19.5, left: 39.5};
-var width = 760 - margin.right;
-var height = 500 - margin.top - margin.bottom;
-
-// Various scales
-var xScale = d3.scaleTime().range([0, width+50]).domain([timeP("6h00"), timeP("23h00")]);
-var yScale = d3.scaleLinear().range([0, height]).domain([]);
-
-// The x & y axes
-var xAxis1 = d3.axisBottom(xScale)
-    .ticks(18)
-    .tickFormat(myformat)
-
-var xAxis2 = d3.axisTop(xScale)
-    .ticks(18)
-    .tickFormat(myformat)
-
-var yAxis = d3.axisLeft(yScale);
-
-// Create the SVG container and set the origin
-var svg = d3.select("#chart")
-    .on("mousemove", mover)
-    .append("svg")
-    .attr("width", width + 200 + margin.left + margin.right)
-    .attr("height", height + margin.top + margin.bottom)
-    .append("g")
-    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-
-//set up a vertical line that moves with mouse movement
-var vline = svg.append("line")
-  .attr("y1", 0)
-  .attr("y2", height)
-  .attr("x1", 50)
-  .attr("x2", 50)
-  .attr("class", "vertline")
-  .on("mousemove", mover);
-
-//moves the line apropriately within the specified bounds
-  function mover() {
-    var xloc = d3.mouse(this)[0] - 40
-    if (xloc > 50 && xloc < (width + 100)) {
-      vline.attr("x1", xloc)
-      vline.attr("x2", xloc);
-    }
-  }
-
-
-//////////////////////////////
-// Step 2: Add x and y axes //
-//////////////////////////////
-svg.append("g")
-  .attr("class", "yaxis axis")
-  .attr("transform", "translate(50,0)")
-  .call(yAxis);
-
-
-svg.append("g")
-  .attr("class", "xaxis axis")
-  .attr("transform", "translate(50, "+height+")")
-  .call(xAxis1);
-
-svg.append("g")
-  .attr("class", "txaxis axis")
-  .attr("transform", "translate(50, 0)")
-  .call(xAxis2);
-
-
-//dictionary to store y locations of trainstops
-var distDict = {}
-
-d3.json("../data/distances.json", function(distances) {
-  distDict = distances
-  var citylist = Object.keys(distances);
-  var myarr = []
-  //make an array of dictionaries that hold the stop locations
-  for(i=0; i<citylist.length; i++) {
-    var hold = String(citylist[i]);
-    myarr.push({name: hold, dis: distances[hold]});
-  }
-
-  //console.log(myarr);
-
-  yAxis.ticks(citylist.length)
-
-  //sets new y axis scale
-  yScale.domain([d3.min(myarr, function(d) {return d.dis;}), d3.max(myarr, function(d) {return d.dis;})]);
-
-  //sets up new trainstop
-  var trainstop = svg.append("g")
-    .attr("class", "trainstop")
-    .selectAll("g")
-    .data(myarr)
-    .enter()
-    .append("g")
-    .attr("transform", function(d) {return "translate(0, "+ yScale(d.dis) +")";});
-
-  //adds text specifying which trainstop
-  trainstop.append("text")
-    .attr("class", "text")
-    .attr("font-size", ".65em")
-    .attr("x", 45)
-    .attr("dy", ".15em")
-    .attr("text-anchor", "end")
-    .text(function(d) {return d.name;});
-
-  //inserts horizontal grid lines
-  svg.selectAll(".hline")
-    .data(myarr)
-    .enter()
-    .append("line")
-    .attr("y1", function(d) {return d.dis;})
-    .attr("y2", function(d) {return d.dis;})
-    .attr("x1", 0)
-    .attr("x2", width + 50)
-    .attr("class", "gridline")
-    .attr("transform", "translate(50,-2.5)");
-
-
-});
-
-d3.json("../data/schedule.json", function(schedule) {
-
-  var tick = 0;
-
-  //function that will draw the path of the train
-  var myline = d3.line()
-    .x(function(d) {return xScale(d.xax);})
-    .y(function(d) {return yScale(d.nameYloc);});
-
-
-  var allData = [];
-
-  for(i=0; i<schedule.length; i++) {
-    temparr = [];
-    //create an array of dictionaries holding the trains x and y locations
-    for(j=0; j<schedule[i].length; j++) {
-      temparr.push({nameYloc: distDict[schedule[i][j][0]], xax: timeP(schedule[i][j][1])});
-      temparr.push({nameYloc: distDict[schedule[i][j][0]], xax: timeP(schedule[i][j][2])});
-    }
-
-    //draw the path of the trainline
-    var train = svg.append("path")
-      .attr("d", myline(temparr))
-      .attr("transform", "translate(50, 0)")
-      .attr("class", "trainline")
-      .attr("stroke", "black")
-      .on("mouseover", mouseover)
-      .on("mouseout", mouseout);
-  }
-
-    //change color if line is hovered over
-    function mouseover() {
-      d3.select(this).attr("stroke", "red");
-    }
-
-    function mouseout() {
-      d3.select(this).attr("stroke", "black")
-    }
-
-
-
-
-});
-*/
