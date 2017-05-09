@@ -1,6 +1,6 @@
     var margin = {top: 19.5, right: 19.5, bottom: 29.5, left: 59.5};
     var width = 1060 - margin.right;
-    var height = 650 - margin.top - margin.bottom;
+    var height = 550 - margin.top - margin.bottom;
     var padding = 30;
 
     // define the y scale  (vertical)
@@ -57,7 +57,7 @@
 
     var timeline = svg.append("text")
       .attr("class", "timeline")
-      .attr("x", 50)
+      .attr("x", 100)
       .attr("y", 530);
 
     timeline.text(' \xa0\xa0 '+'2000'+' \xa0\xa0\xa0 '+'2001'+' \xa0\xa0\xa0 '+'2002'+' \xa0\xa0\xa0 '+'2003'+' \xa0\xa0\xa0 '
@@ -169,9 +169,9 @@ svg.append("text")
 svg.append("text")
     .attr("class", "x label")
     .attr("text-anchor", "end")
-    .attr("x", width/2)
-    .attr("y", height +50)
-    .text("Select Year");
+    .attr("x", 0)
+    .attr("y", 530)
+    .text("Select Year:");
 
 
 
