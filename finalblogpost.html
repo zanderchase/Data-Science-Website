@@ -1,65 +1,45 @@
 <html lang="en-us">
   <head>
     <meta charset="UTF-8">
-    <title>Blog Post 2</title>
+    <title>Final Blog Post</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="style.css" media="screen">
   <body>
     <section class="page-header">
       <h1 class="project-name">What Does The Fox Say?</h1>
-      <h2 class="project-tagline">Blog Post 2</h2>
+      <h2 class="project-tagline">Final Blog Post</h2>
     </section>
 
     <section class="main-content">
       <a href="index.html">Back</a>
       <br />
-      <h1>Blog Post 2: 4/6/17</h1>
-      <h3>Machine Learning Analysis: </h3>
-        <p> Last week we updated our dataset to include genres of all of the top songs. 
-          Once our dataset  was complete with information regarding song duration on the top charts, 
-          peak performance, genre, etc. we were ready to perform analysis on our data set. 
+      <h1>Final Blog Post: 5/10/17</h1>
+      <h3>Update: </h3>
+        <p> Today was a momentous day in the evolution of our final project. We presented our final poster and turned in 
+          our final report, both of which went well. Below we are going to give a brief overview of our project and
+          what we were able to achieve.
         </p>
-        <p>
-        After assessing various potential options we decided to implement a naive bayes ML analysis 
-        on the dataset. For each song we added a tag that specified if it was a one-hit wonder with true 
-        representing a one-hit wonder and false representing a song that was not. This would be used as a 
-        label in our training set to learn what attributes were responsible for a one hit wonder. For features 
-        we extracted various descriptive qualities such as peak performance, time on the top charts, and genre. 
-        After storing two arrays with our training attributes and training labels, we initialized our classifier. 
-        Using the classifier we fit it with our data and were able to get the mean and std deviation scores. 
-        </p>
-        <p>
-          Once we trained our data using song data from various years we moved onto testing it. 
-          First, we obtained new label and attribute data from our testing data. Using this 
-          new data and our classifier we used the predict function to try and estimate future labels.
-           Using the actual labels from the test data and the predicted test labels we created a confusion matrices using different
-           classification techniques. Although we still need to process the data further in order to get a more accurate result, the current 
-           confusion matrices allude to the notion that most one hit wonders are truly random because it is extremely hard to predict which song
-           is a one hit wonder. There is a fairly significant discrepancy between the three classifications, but all three have True Negative as the largest
-           value in the confusion matrix. Here are three classifications we found were useful in our machine learning analysis:
-        </p>
-        <p> Logistic Regression: True Positive: 0, False Positive: 0, False Negative: 1386, True Negative: 3813</p>
-        <p> K Neighbors Classifier: True Positive: 46, False Positive: 44, False Negative: 1340, True Negative: 3769</p>
-        <p> Decision Tree Classifier: True Positive: 155, False Positive: 208, False Negative: 1231, True Negative: 3605</p>
  
-      <h3>Moving forward:</h3>
-      <img src = 'Blogpost2.png'>
+      <h3>Overview:</h3>
         <p>
-          The above graph is one example of the type of analysis that we wish to compile for the rest 
-          of the project, and thus represents a midpoint between our midterm report and where we want 
-          to be when the project is completed. In this graph we show the most popular genres for a given year 
-          (in this case 2015). It is our goal to expand this work and have a complete data set for the most 
-          popular genres for each year. 
+         In this project, we aimed to investigate the various factors that lead to the creation and popularity of a one-hit wonder. A one-hit wonder is defined by Billboard (which is the music industry standard for measuring chart performance) as “an act that has won a position on [the] national, pop, Top 40 just once.” Similarly, a wonder is any song that enters the Top 40. By looking at Billboard Top 100 data of songs from 2000 - 2015 we compared one-hit wonders to other wonders of the same time period. By analyzing different features such as genre and lasting time on the top charts we hoped to find the characteristics that distinguished a one-hit wonder.
+
         </p>
+        
+      <h3>Conclusion:</h3>
         <p>
-          One of the goals of our midterm report was to work out any last kinks in our data. As of now our data 
-          is finally complete, cleaned, and ready to be used for extensive analysis. Additionally, we experimented 
-          with visualizing the chart movement for various other one hit wonders as we demonstrated in the midterm 
-          report. Finally, we have continued to analyze the effect of various features on our different analyses.
+         In this project we applied that knowledge that we accumulated throughout the semester. First, we websraped the necessary data and created a database in order to easily access it. Next, we performed several statistical analyses on the data gaining various insights into the different characteristics of a one-hit wonder. To represent our findings we created a variety of different graphs, charts, and visualizations. Furthermore, we utilized various different techniques to maximize the predictive power of our machine learning. From doing this project we put to use the tools we learned in class and completed a project that integrated all aspects of data science.
         </p>
-        <p>
-          Moving forward we hope to use further machine learning and visualizations to analyze our data. Looking at the trends of one-hit wonder songs gave us an interesting insight into what constitutes a one-hit wonder. The next thing we hope to look into is the impact of genres the of other popular songs during the rise of a one-hit wonder. By gathering data of songs during a certain time period we can see how popular each genre was during that time period. Comparing this data to the genre of a one-hit wonder during that time period will give us an interesting insight into the impact that genre has on the rise of a one-hit wonder. Another approach to analyzing our data that we want to take is through visualization. Using D3 we hope to create a visualization that shows the path of all one-hit wonders on the billboard top 100 chart. By selecting a certain one-hit wonder from the list it will display the trajectory of its path overtime. This will be an interesting way to easily visualize how specific one-hit wonder songs rise and fall over time. We may also include the one-hit wonder genre and most popular genres of the time period to visualize the impact that genres have on one-hit wonder trajectories. This is a long term goal of ours to enable users to easily visualize the path of all the one-hit wonders from the past 15 years.
-        </p>
+      <p>
+From our extensive analysis into one-hit wonders we were able to gain various insights that allowed us to answer our hypothesis. By looking at the movement of one-hit wonder songs up and down the charts across all genres we saw no significant difference between their movement and that of other top wonders. The d3 visualization showing one-hit wonders allowed us to see the movement all individual one-hit wonders per year. The graphs showing the lasting time and peak position of one-hit wonders compared to other wonders showed the similarities between song features. Lastly, by graphing the total trajectory of one-hit wonders and all wonders we were able to conclude that their chart movement during their life on the top charts was very similar. 
+</p>
+      <p>
+Another important insight gained from our analysis is the importance of genre as a defining characteristic of one-hit wonders. From our machine learning section, we determined that genre made a significant difference in helping predict whether a song would be a one-hit wonder or not. Additionally, we were able to glean various interesting observations about genre trends for one-hit wonders over the timeframe that we analyzed. As mentioned above, rock virtually died out as a popular genre for one-hit wonders. Pop, as we intuitively predicted, was consistently the most popular genre for one-hit wonders. Whatmore, we were able to observe an interesting trend with the genre ‘country’: there was a lack of one-hit wonders in this genre, even though ‘country’ as a genre performed well for regular wonders. Interestingly, we were also able to observe that most one-hit wonders come out during the months of May and June, even though these months were not the most popular for the entrance of regular wonders into the chart. This observation gives more credence to our investigation into the phenomenon of the “song of the summer”. 
+</p>
+      <p>
+In this project we performed various different analyses of one-hit wonder and other top song data to gain insights into our initial hypotheses. Song chart movement interestingly turned out to not differentiate much between one-hit wonders and other wonders. Genre, on the other hand, had many attributes that were unique to one-hit wonders. After a semester of hard work we were finally able to answer the question that one-hit wonder artist Ylvis posed to the music world: What does the Fox Say?
+</p>
+      
       <a href="index.html">Return to Home Page</a>
     </section>
 
