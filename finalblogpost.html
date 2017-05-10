@@ -1,0 +1,69 @@
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Blog Post 2</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style.css" media="screen">
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">What Does The Fox Say?</h1>
+      <h2 class="project-tagline">Blog Post 2</h2>
+    </section>
+
+    <section class="main-content">
+      <a href="index.html">Back</a>
+      <br />
+      <h1>Blog Post 2: 4/6/17</h1>
+      <h3>Machine Learning Analysis: </h3>
+        <p> Last week we updated our dataset to include genres of all of the top songs. 
+          Once our dataset  was complete with information regarding song duration on the top charts, 
+          peak performance, genre, etc. we were ready to perform analysis on our data set. 
+        </p>
+        <p>
+        After assessing various potential options we decided to implement a naive bayes ML analysis 
+        on the dataset. For each song we added a tag that specified if it was a one-hit wonder with true 
+        representing a one-hit wonder and false representing a song that was not. This would be used as a 
+        label in our training set to learn what attributes were responsible for a one hit wonder. For features 
+        we extracted various descriptive qualities such as peak performance, time on the top charts, and genre. 
+        After storing two arrays with our training attributes and training labels, we initialized our classifier. 
+        Using the classifier we fit it with our data and were able to get the mean and std deviation scores. 
+        </p>
+        <p>
+          Once we trained our data using song data from various years we moved onto testing it. 
+          First, we obtained new label and attribute data from our testing data. Using this 
+          new data and our classifier we used the predict function to try and estimate future labels.
+           Using the actual labels from the test data and the predicted test labels we created a confusion matrices using different
+           classification techniques. Although we still need to process the data further in order to get a more accurate result, the current 
+           confusion matrices allude to the notion that most one hit wonders are truly random because it is extremely hard to predict which song
+           is a one hit wonder. There is a fairly significant discrepancy between the three classifications, but all three have True Negative as the largest
+           value in the confusion matrix. Here are three classifications we found were useful in our machine learning analysis:
+        </p>
+        <p> Logistic Regression: True Positive: 0, False Positive: 0, False Negative: 1386, True Negative: 3813</p>
+        <p> K Neighbors Classifier: True Positive: 46, False Positive: 44, False Negative: 1340, True Negative: 3769</p>
+        <p> Decision Tree Classifier: True Positive: 155, False Positive: 208, False Negative: 1231, True Negative: 3605</p>
+ 
+      <h3>Moving forward:</h3>
+      <img src = 'Blogpost2.png'>
+        <p>
+          The above graph is one example of the type of analysis that we wish to compile for the rest 
+          of the project, and thus represents a midpoint between our midterm report and where we want 
+          to be when the project is completed. In this graph we show the most popular genres for a given year 
+          (in this case 2015). It is our goal to expand this work and have a complete data set for the most 
+          popular genres for each year. 
+        </p>
+        <p>
+          One of the goals of our midterm report was to work out any last kinks in our data. As of now our data 
+          is finally complete, cleaned, and ready to be used for extensive analysis. Additionally, we experimented 
+          with visualizing the chart movement for various other one hit wonders as we demonstrated in the midterm 
+          report. Finally, we have continued to analyze the effect of various features on our different analyses.
+        </p>
+        <p>
+          Moving forward we hope to use further machine learning and visualizations to analyze our data. Looking at the trends of one-hit wonder songs gave us an interesting insight into what constitutes a one-hit wonder. The next thing we hope to look into is the impact of genres the of other popular songs during the rise of a one-hit wonder. By gathering data of songs during a certain time period we can see how popular each genre was during that time period. Comparing this data to the genre of a one-hit wonder during that time period will give us an interesting insight into the impact that genre has on the rise of a one-hit wonder. Another approach to analyzing our data that we want to take is through visualization. Using D3 we hope to create a visualization that shows the path of all one-hit wonders on the billboard top 100 chart. By selecting a certain one-hit wonder from the list it will display the trajectory of its path overtime. This will be an interesting way to easily visualize how specific one-hit wonder songs rise and fall over time. We may also include the one-hit wonder genre and most popular genres of the time period to visualize the impact that genres have on one-hit wonder trajectories. This is a long term goal of ours to enable users to easily visualize the path of all the one-hit wonders from the past 15 years.
+        </p>
+      <a href="index.html">Return to Home Page</a>
+    </section>
+
+
+  </body>
+  </head>
+</html>
